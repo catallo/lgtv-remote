@@ -9,10 +9,15 @@ Works with LG webOS TVs from 2016 onwards (webOS 3.0+).
 Binaries are available for every platform Go supports:
 
 **Linux:** amd64, arm64, arm, 386, mips, mips64, mipsle, mips64le, ppc64, ppc64le, riscv64, s390x, loong64
+
 **macOS:** amd64 (Intel), arm64 (Apple Silicon)
+
 **Windows:** amd64, arm64, 386
+
 **FreeBSD:** amd64, arm64, arm, 386
+
 **OpenBSD:** amd64, arm64, arm, 386, ppc64, riscv64
+
 **NetBSD:** amd64, arm64, arm, 386
 
 Download from the [Releases](https://github.com/catallo/lgtv-remote/releases) page.
