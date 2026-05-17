@@ -93,6 +93,7 @@ Flags:
   --key-file <path>             Client key file
   -j, --json                    JSON output
   -h, --help                    Show this help
+...
 
 Configuration:
   Config file: ~/.config/lgtv-remote/config.json
