@@ -53,41 +53,56 @@ This will:
 ## Usage
 
 ```
-lgtv-remote on                  # Wake-on-LAN
-lgtv-remote off                 # Turn off
-lgtv-remote volume              # Show volume
-lgtv-remote volume 25           # Set volume
-lgtv-remote volume up|down      # Adjust
-lgtv-remote mute                # Toggle mute
-lgtv-remote sound tv            # TV speakers
-lgtv-remote sound headphone     # Wired output
-lgtv-remote sound arc           # HDMI ARC
-lgtv-remote input HDMI_1        # Switch input
-lgtv-remote inputs              # List inputs
-lgtv-remote launch YouTube      # Open app
-lgtv-remote apps                # List apps
-lgtv-remote btn UP DOWN ENTER   # Remote buttons
-lgtv-remote screen-off          # Screen off, audio stays
-lgtv-remote toast "Hello"       # Show notification
-lgtv-remote info                # System info
-lgtv-remote discover            # Find TVs on network
-```
+  setup                         Interactive first-run setup wizard
+  discover                      Discover LG TVs on the network (SSDP)
+  on                            Wake-on-LAN (turn on)
+  off                           Turn off
+  volume                        Get current volume
+  volume <0-100>                Set volume
+  volume up|down                Volume up/down
+  mute                          Toggle mute
+  mute on|off                   Mute/unmute
+  app                           Show current app
+  apps                          List all installed apps
+  launch <app-id>               Launch app by ID
+  input                         Show current input
+  inputs                        List all inputs
+  input <HDMI_1|HDMI_2|...>     Switch input
+  channel                       Current channel
+  channels                      List channels
+  channel <number>              Switch to channel
+  toast <message>               Show toast notification
+  play                          Media play
+  pause                         Media pause
+  stop                          Media stop
+  rewind                        Media rewind
+  ff                            Media fast forward
+  info                          System info
+  screen-off                    Turn screen off (audio stays)
+  screen-on                     Turn screen on
+  text <text>                   Insert text (for search fields)
+  sound                         Get current sound output
+  sound <output>                Set sound output (tv/headphone/arc/bt/optical)
+  btn [button...]               Send button press (UP/DOWN/LEFT/RIGHT/ENTER/HOME/BACK...)
+  click                         Click at current pointer position
+  move <dx> <dy>                Move pointer (relative)
+  scroll <dx> <dy>              Scroll
 
-Media: `play`, `pause`, `stop`, `rewind`, `ff`
-Pointer: `click`, `move <dx> <dy>`, `scroll <dx> <dy>`
-Channels: `channel`, `channels`, `channel <number>`
+Flags:
+  -i, --ip <addr>               TV IP address
+  --key-file <path>             Client key file
+  -j, --json                    JSON output
+  -h, --help                    Show this help
 
-## Config
+Configuration:
+  Config file: ~/.config/lgtv-remote/config.json
+  Client key:  ~/.config/lgtv-remote/client_key.txt
+  Env vars:    LGTV_IP, LGTV_MAC
 
-Stored in `~/.config/lgtv-remote/`:
-- `config.json` — IP, MAC address
-- `client_key.txt` — pairing key (auto-saved)
+  Priority: CLI flags > config file > environment variables
+  Run 'lgtv setup' for interactive first-run configuration.
 
 Override with flags (`-i`, `--key-file`) or env vars (`LGTV_IP`, `LGTV_MAC`).
-
-## JSON output
-
-Use `-j` for machine-readable output.
 
 ## Compatibility
 
